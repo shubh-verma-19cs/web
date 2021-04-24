@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qlothy - Indian Clothing Brand</title>
+    <link rel="icon" href="images/logo.png"/>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+      body {
+        margin: 0px;
+        font-family: "Poppins", sans-serif;
+        color: #243a6f;
+      }
+      .stick {
+        position: fixed;
+        background-color: rgb(168, 52, 191);
+        bottom: 300px;
+        right: -33px;
+        padding: 10px 20px;
+        -ms-transform: rotate(-90deg); /* IE 9 */
+        transform: rotate(-90deg);
+        border-radius: 14px;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+        font-weight: 800;
+        color: white;
+      }
+      
+      .header {
+        width: 100%;
+        height: 550px;
+        background-color: #d1e2e9;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 67.2px;
+        z-index: 1;
+        background-color: #d1e2e9;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 10%);
+      }
+      nav .logo a {
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        float: left;
+        padding: 15px 70px;
+        text-decoration: none;
+        color: #243a6f;
+      }
+      nav ul {
+        float: right;
+        display: flex;
+        list-style: none;
+      }
+      nav ul li a {
+        padding: 15px;
+        text-decoration: none;
+        font-weight: 500px;
+        color: #243a6f;
+      }
+      nav ul li a:hover {
+        padding: 10px;
+        background-color: #243a6f;
+        color: white;
+        border-radius: 15px;
+      }
+      /* ----------------------------- */
+      .scrolling-active {
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #243a6f;
+        box-shadow: 0 5px 15px rgb(0 0 0 / 30%);
+        z-index: 999;
+      }
+      .scrolling-active a {
+        color: white;
+      }
+      .scrolling-active .logo a {
+        color: white;
+      }
+      .scrolling-active a:hover {
+        padding: 12px;
+        background-color: white;
+        color: #243a6f;
+        border-radius: 15px;
+      }
+      /* ------------------------------ */
+      .header .boy {
+        position: absolute;
+        right: 0px;
+      }
+
+      .boy-content {
+        position: absolute;
+        top: 50%;
+        transform: translate(25%, -50%);
+      }
+      .boy-content h2 {
+        margin-top: 0px;
+        color: #b888ff;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .boy-content .discount {
+        color: #f3c053;
+      }
+      .boy-content h1 span {
+        color: #253b70;
+        font-size: 4rem;
+        font-weight: bolder;
+        display: block;
+        line-height: 1;
+        text-shadow: 3px 3px 0 #f1f1f1, 4px 4px 0 #f1f1f1;
+      }
+      .btn {
+        display: inline-block;
+        background-color: #fc7c7c;
+        padding: 1rem 3rem;
+        color: #fff;
+        font-weight: 600;
+        font-size: large;
+        text-transform: uppercase;
+        margin-top: 3rem;
+        text-decoration: none;
+        border-radius: 15px;
+      }
+      .section {
+  padding: 10rem 0 5rem 0;
+}
+
+.advert-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+}
+
+.advert-box {
+  position: relative;
+  color: #fff;
+  height: 27rem;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.advert-box img {
+  position: absolute;
+  bottom: 0%;
+  left: -20%;
+  height: 100%;
+  width: 35rem;
+  z-index: -1;
+}
+
+.advert-box:nth-child(1) {
+  background-color: #f5c5d1;
+}
+
+.advert-box:nth-child(2) {
+  background-color: #a1d1df;
+}
+
+.advert-box:nth-child(3) {
+  background-color: #e5bc00;
+}
+
+.advert-box .dotted {
+  position: relative;
+  height: 100%;
+  border: 2px dashed #f1f1f1;
+  border-radius: 1rem;
+}
+
+.advert-box .content {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(0, -50%);
+}
+
+.advert-box .content h2,
+.advert-box .content h4 {
+  text-shadow: 5px 6px 0px rgba(37, 59, 112, 0.1);
+}
+
+.advert-box .content h2 {
+  line-height: 1.2;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.advert-box .content h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+.promo {
+        background-color: #243a6f;
+        text-align: center;
+       
+        padding: 7px 0;
+        
+      }
+      .promo1{
+        text-decoration:none;
+        color: white;
+      }
+      #login-form {
+        display: none;
+      }
+      .form-box {
+        width: 380px;
+        height: 480px;
+        position: relative;
+        margin: 2% auto;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        overflow: hidden;
+      }
+      .button-box {
+        width: 220px;
+        margin: 35px auto;
+        position: relative;
+        box-shadow: 0 0 20px 9px #ff61241f;
+        border-radius: 30px;
+      }
+      .toggle-btn {
+        padding: 10px 30px;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        outline: none;
+        position: relative;
+      }
+      #button1 {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 110px;
+        height: 100%;
+        background: #f3c693;
+        border-radius: 30px;
+        transition: 0.5s;
+      }
+      .input-group-login {
+        top: 150px;
+        position: absolute;
+        width: 280px;
+        transition: 0.5s;
+      }
+      .input-group-register {
+        top: 120px;
+        position: absolute;
+        width: 280px;
+        transition: 0.5s;
+      }
+      .input-field {
+        width: 100%;
+        padding: 10px 0;
+        margin: 5px 0;
+        border-left: 0;
+        border-top: 0;
+        border-right: 0;
+        border-bottom: 1px solid #999;
+        outline: none;
+        background: transparent;
+      }
+      .submit-btn {
+        width: 85%;
+        padding: 10px 30px;
+        cursor: pointer;
+        display: block;
+        margin: auto;
+        background: #f3c693;
+        border: 0;
+        outline: none;
+        border-radius: 30px;
+      }
+      .check-box {
+        margin: 30px 10px 34px 0;
+      }
+      .span1 {
+        color: #777;
+        font-size: 12px;
+        bottom: 68px;
+        position: absolute;
+      }
+      #login {
+        left: 50px;
+      }
+      #login input {
+        color: white;
+        font-size: 15;
+      }
+      #register {
+        left: 450px;
+      }
+      #register input {
+        color: white;
+        font-size: 15;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stick">Message us</div>
+    <div class="promo"><a href="" class="promo1">30% OFF This Summer Holidays</a> </div>
+    <nav>
+      <div class="logo"><a href="index.html">QLOTHY</a></div>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li>
+          <a href="" ><i class="material-icons">shopping_cart</i></a>
+        </li>
+        <li>
+          <!-- <a href="" onclick="document.getElementById('login-form').style.display='block'"
+          style="width: auto"><i class="material-icons">account_circle</i></a> -->
+          <button
+                onclick="document.getElementById('login-form').style.display='block'"
+              >
+                Login
+              </button>
+        </li>
+      </ul>
+    </nav>
+    <div class="header">
+      <img src="images/advert1.png" class="boy" alt="" height="550" />
+      <div class="boy-content">
+        <h2><span class="discount">70%</span> SALE OFF</h2>
+        <h1>
+          <span>Summer Vibes</span>
+          <span>mode on</span>
+        </h1>
+        <a href="" class="btn">Shop Now</a>
+      </div>
+    </div>
+        <section class="advert section">
+          <div class="advert-center container">
+            <div class="advert-box">
+              <div class="dotted">
+                <div class="content">
+                  <h2>
+                    Girls <br />
+                    Clothing
+                  </h2>
+                  <h4>Worlds Best Brands</h4>
+                </div>
+              </div>
+              <img src="./images/advert1.png" alt="">
+            </div>
+          </div>
+    
+
+
+            <div id="login-form" class="login-page">
+              <div class="form-box">
+                <div class="button-box">
+                  <div id="button1"></div>
+                  <button type="button" onclick="login()" class="toggle-btn">
+                    Log In
+                  </button>
+                  <button type="button" onclick="register()" class="toggle-btn">
+                    Register
+                  </button>
+                </div>
+                <form id="login" class="input-group-login">
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Email Id"
+                    required
+                  />
+                  <input
+                    type="password"
+                    class="input-field"
+                    placeholder="Enter Password"
+                    required
+                  />
+                  <input type="checkbox" class="check-box" /><span class="span1"
+                    >Remember Password</span
+                  >
+                  <button type="submit" class="submit-btn">Log in</button>
+                </form>
+                <form id="register" class="input-group-register">
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="First Name"
+                    required
+                  />
+                  <input
+                    type="text"
+                    class="input-field"
+                    placeholder="Last Name "
+                    required
+                  />
+                  <input
+                    type="email"
+                    class="input-field"
+                    placeholder="Email Id"
+                    required
+                  />
+                  <input
+                    type="password"
+                    class="input-field"
+                    placeholder="Enter Password"
+                    required
+                  />
+                  <input
+                    type="password"
+                    class="input-field"
+                    placeholder="Confirm Password"
+                    required
+                  />
+                  <input type="checkbox" class="check-box" /><span class="span1"
+                    >I agree to the terms and conditions</span
+                  >
+                  <button type="submit" class="submit-btn">Register</button>
+                </form>
+              </div>
+            </div>
+          
+    <script>
+      window.addEventListener("scroll", function () {
+        let header = document.querySelector("nav");
+        let windowPosition = window.scrollY > 500;
+        header.classList.toggle("scrolling-active", windowPosition);
+      });
+    </script>
+
+<script>
+  var x = document.getElementById("login");
+  var y = document.getElementById("register");
+  var z = document.getElementById("button1");
+  function register() {
+    x.style.left = "-400px";
+    y.style.left = "50px";
+    z.style.left = "110px";
+  }
+  function login() {
+    x.style.left = "50px";
+    y.style.left = "450px";
+    z.style.left = "0px";
+  }
+</script>
+<script>
+  var modal = document.getElementById("login-form");
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
+  </body>
+</html>
